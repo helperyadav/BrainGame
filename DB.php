@@ -16,9 +16,9 @@
   	}
   	
   	public static function get_db(){
-  		if($empty($db) )
+  		//if($empty($db) )
   		
-  		return $db;
+  		return  new mysqli("localhost", "root", '', "puzzledb");
   	}
   	
   	public static function close() {

@@ -16,7 +16,10 @@
  
  class ReadPuzzle {
  	private $baseUrl ;
+ 	private $myDB;
 	 function __constructor($baseUrl){
+	 	$myDB = DB::get_db();
+	 	
 	 	$this->$baseUrl = $baseUrl;
 	 }
 	 
