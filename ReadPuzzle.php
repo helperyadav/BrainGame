@@ -23,7 +23,7 @@ class ReadPuzzle {
 
 		$this-> $baseUrl = $baseUrl;
 	}
-
+ 
 	public function get_puzzle() {
 		$sql = "SELECT * FROM `puzzle`";
 		$myDB = DB::get_db();
