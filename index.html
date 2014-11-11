@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href=".\data\lib\bootstrap\css\bootstrap.css" rel="stylesheet">
+		
+		
+		<script src=".\data\lib\jquery-2.1.1.min.js"></script>
+		<script src=".\data\lib\bootstrap\js\bootstrap.js"></script>
+		<script src=".\data\lib\melonJS-1.1.0.js"></script>
+		<script src=".\data\lib\plugins\debugPanel.js"></script>
+		<script src=".\js\resource.js"></script>
+		<script src=".\js\game.js"></script>
+		
+		<script>
+			window.onReady(function onReady() {
+				//me.game.world = new me.Container();
+				getGameData( game.load );
+				
+				// Mobile browser hacks
+				if (me.device.isMobile && !navigator.isCocoonJS) {
+					// Prevent the webview from moving on a swipe
+					window.document.addEventListener("touchmove", function (e) {
+						e.preventDefault();
+						window.scroll(0, 0);
+						return false;
+					}, false);
+
+					// Scroll away mobile GUI
+					(function () {
+						window.scrollTo(0, 1);
+						me.video.onresize(null);
+					}).defer();
+
+					me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
+						window.scrollTo(0, 1);
+					});
+				}
+			});
+			
+		</script>
+	</head>
+	<body>
+		<div class='navbar-inverse navbar-fixed-top'>
+			<div class="container">
+				<h1 class='text-right'><span class="label label-danger">New</span></h1>
+			</div>
+		</div>
+		<div class='well'>
+			<img id='img'/>
+		</div>
+		<div class='navbar-inverse navbar-fixed-bottom'>
+			<div class="container">
+				<div id="screen" style="position:fixed;top:500px;"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href=".\data\lib\bootstrap\css\bootstrap.css" rel="stylesheet">
+		<script src=".\data\lib\melonJS-1.1.0.js"></script>
+		<script src=".\data\lib\jquery-2.1.1.min.js"></script>
+		<script src=".\data\lib\bootstrap\js\bootstrap.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				var img = new Image();
+				$(img).load(function(){
+					$('img').attr('src', './data/img/bmw.jpg').appendTo( $('body') );
+					//$('#img').html('<img src="./data/img/bmw.jpg" width="200px">');
+				});
+				img.src = './data/img/bmw.jpg';
+				
+				
+				//$('body').append( img );
+			});
+		</script>
+	</head>
+	<body>
+		<div class='navbar-inverse navbar-fixed-top'>
+			<div class="container">
+				<h1 class='text-right'><span class="label label-danger">New</span></h1>
+			</div>
+		</div>
+		<div class='well'>
+			<img id='img'/>
+		</div>
+		<div class='navbar-inverse navbar-fixed-bottom'>
+			<div class="container">
+				hello
+			</div>
+		</div>
+	</body>
+</html>
