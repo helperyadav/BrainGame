@@ -8,7 +8,7 @@
  
   //$db = new mysqli("localhost", "root", '', "puzzledb");
   
-  class myDB {
+  class DB {
   	private $db;
   	
   	public static function __constructor(){
